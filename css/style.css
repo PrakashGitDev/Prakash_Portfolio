@@ -1,0 +1,908 @@
+/*Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;900&family=Poppins:ital,wght@0,100;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,400&family=Roboto:wght@100;300;400&display=swap');
+
+* {
+    font-family: poppins, sans-serif;
+    margin: 0;
+    padding: 0;
+    /*border-box--If you set an element's width to 100 pixels, that 100 pixels will include any border 
+    or padding you added,and the content box will shrink to absorb that extra width */
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+}
+
+/*variables*/
+:root {
+    --main-color: #ffffff;
+    --body-color: #1E262E;
+    --container-color: rgb(109, 3, 248);
+    --heading-color: darkgrey;
+    --box-color: rgb(109, 3, 248);
+    --bg-color: #E6E6E6;
+}
+
+/*Global declaration starts*/
+body {
+    color: var(--bg-color);
+    background-color: var(--body-color);
+    overflow-x: hidden;
+}
+
+img {
+    width: 100%;
+}
+
+section {
+    padding: 3rem 0 2rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    width: 92%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.heading {
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: var(--heading-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.color {
+    color: rgb(25, 169, 218);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #a19898;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--container-color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(74, 74, 180);
+}
+
+/*Global declaration ends*/
+
+/* header style starts */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.header-active {
+    background: var(--box-color);
+    transition: .4s;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    column-gap: 1.5rem;
+}
+
+.nav-link {
+    font-size: 1rem;
+    padding: 4px 8px;
+    border-radius: .3rem;
+    color: var(--bg-color);
+}
+
+.nav-link:hover {
+    color: var(--bg-color);
+    background: black;
+    transition: 0.3s all linear;
+}
+
+/* header style ends */
+
+
+
+
+/* Menu icon style starts */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 5px;
+    cursor: pointer;
+    z-index: 200;
+    transition: 0.3s;
+}
+
+.menu-icon>div {
+    display: block;
+    background-color: var(--bg-color);
+    height: 2px;
+    width: 24px;
+    transition: 0.3s;
+}
+
+.move .line1 {
+    transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.move .line2 {
+    opacity: 0;
+}
+
+.move .line3 {
+    transform: rotate(45deg) translate(-5px, -5px);
+}
+
+/* Menu icon style ends */
+
+
+
+
+/* Home style starts */
+.home {
+    /* If the content is smaller than the minimum height, the minimum height will be applied.
+    If the content is larger than the minimum height, the min-height property has no effect. */
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 7rem;
+}
+
+.home-content {
+    position: relative;
+    /* If the content is larger than the maximum width, it will automatically change the height of the element.
+    If the content is smaller than the maximum width, the max-width property has no effect. */
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.home-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: grey;
+    overflow: hidden;
+    /* The image keeps its aspect ratio and fills the given dimension. The image will be clipped to fit */
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 2rem;
+    border: 5px solid rgb(109, 3, 248);
+    ;
+}
+
+.home-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.home-text h3 {
+    display: flex;
+    position: relative;
+    align-items: center;
+    font-size: 2.5rem;
+    color: var(--main-color);
+}
+
+.home-text h3::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+    left: -15px;
+    width: 20px;
+    height: 2px;
+    background: var(--main-color);
+}
+
+.home-text h3::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+    left: 118px;
+    width: 20px;
+    height: 2px;
+    background: var(--main-color);
+}
+
+.home-text h2 {
+    font-size: 3rem;
+    line-height: 3.8rem;
+}
+
+.home-text p {
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+
+/* Home social icons */
+.social {
+    display: flex;
+    align-items: center;
+    column-gap: .4rem;
+}
+
+.social .bx {
+    font-size: 1.4rem;
+    padding: 10px;
+    border-radius: 50%;
+    color: var(--bg-color);
+    background: var(--container-color);
+    margin: 5px;
+
+}
+
+.social .bx:hover {
+    background: var(--main-color);
+    color: #1E262E;
+    transition: all 0.3s linear;
+}
+
+/* Home style ends*/
+
+
+
+/* About style starts*/
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.about-data span {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--main-color);
+}
+
+.about-data h2 {
+    font-size: 2rem;
+    line-height: 2.6rem;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+.btn {
+    font-size: .9rem;
+    display: inline-block;
+    align-items: center;
+    column-gap: .5rem;
+    color: whitesmoke;
+    background-color: var(--container-color);
+    padding: 10px 16px;
+    border-radius: .4rem;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    background: rgb(97, 106, 231);
+    color: black;
+    transition: .3s all linear;
+}
+
+.btn .bx {
+    font-size: 1.3rem;
+}
+
+.about-text p {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-align: justify;
+    margin-bottom: 1.5rem;
+}
+
+/* About style ends*/
+
+
+
+/* service style starts*/
+.services-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem
+}
+
+.services-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+    background: var(--container-color);
+    border-radius: .4rem;
+}
+
+.services-box:hover {
+    transform: scale(1.05);
+    transition: all .5s linear;
+}
+
+.services-box .bx {
+    font-size: 1.4rem;
+    color: var(--main-color);
+    padding: 10px;
+    border-radius: 5rem;
+    border: 2px dashed var(--bg-color);
+}
+
+.services-box h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: .5rem 0;
+    color: var(--main-color);
+}
+
+.services-box p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: .5rem 0;
+    color: whitesmoke;
+}
+
+/* service style starts*/
+
+
+
+/* Portfolio style starts*/
+.portfolio-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.portfolio-box {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.portfolio-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: hsl(234, 45%, 16%, 0.7);
+}
+
+.portfolio-overlay h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.portfolio-overlay .bx {
+    font-size: 1.7rem;
+    padding: 10px;
+    background: var(--main-color);
+    border-radius: 4px;
+    color: var(--bg-color);
+    color: black;
+}
+
+.portfolio-overlay .bx-icons {
+    display: flex;
+    gap: 2rem;
+}
+
+.portfolio-overlay .bx:hover {
+    background: var(--container-color);
+    transition: all .3s linear;
+    color: white;
+}
+
+.portfolio-box:hover .portfolio-overlay {
+    top: 0;
+    transition: all .4s ease;
+}
+
+/* Portfolio style ends*/
+
+
+/* Skill style starts*/
+.skills:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.details {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.bar {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 7px 10px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.bar div {
+    position: relative;
+    width: 0;
+    height: 5px;
+    border-radius: 10px;
+    background-color: #badefc;
+    border: 1px solid #1c97fc;
+    box-shadow: 0 0 5px rgba(28, 151, 252, 0.6);
+}
+
+
+#html-bar {
+    animation: html-fill 2s forwards;
+}
+
+@keyframes html-fill {
+    100% {
+        width: 88%;
+    }
+}
+
+#css-bar {
+    animation: css-fill 2s forwards;
+}
+
+@keyframes css-fill {
+    100% {
+        width: 88%;
+    }
+}
+
+#js-bar {
+    animation: js-fill 2s forwards;
+}
+
+@keyframes js-fill {
+    100% {
+        width: 82%;
+    }
+}
+
+#sass-bar {
+    animation: html-fill 2s forwards;
+}
+
+@keyframes html-fill {
+    100% {
+        width: 80%;
+    }
+}
+
+#bootstrap-bar {
+    animation: html-fill 2s forwards;
+}
+
+@keyframes html-fill {
+    100% {
+        width: 80%;
+    }
+}
+
+/* skill style ends*/
+
+
+
+/* Project style starts*/
+.projects-content {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.project-box {
+    padding: 20px 10px;
+    background: var(--container-color);
+    color: var(--main-color);
+    border-radius: .4rem;
+    text-align: center;
+}
+
+.project-box h2 {
+    font-size: 1.4rem;
+}
+
+.project-box span {
+    font-size: 1.1rem;
+}
+
+/* Project style ends*/
+
+
+
+/* Reviews style ends*/
+.reviews {
+    max-width: 780px;
+    width: 100%;
+    margin: auto;
+}
+
+.review-box {
+    max-width: 530px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* if you use the ! important rule, it will override ALL previous styling rules for that specific property on that element! */
+    margin-bottom: 4rem !important;
+}
+
+.review-box .bx {
+    font-size: 2rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.review-box .review-text {
+    font-size: .9rem;
+    margin-bottom: 1.2rem;
+
+}
+
+.review-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.review-profile h2 {
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+    color: var(--heading-color);
+    font-weight: 600;
+}
+
+.review-profie span {
+    font-size: .95rem;
+    margin: .5rem 0 .7rem;
+
+}
+
+.review-box img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding: 4px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    object-position: center;
+}
+
+.swiper-pagination-bullet {
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: .2rem !important;
+    background: var(--bg-color) !important;
+}
+
+.swiper-pagination-bullet-active {
+    width: 1.2rem !important;
+    background: var(--main-color);
+}
+
+/* Reviews style ends*/
+
+
+
+/* ContactForm style Starts*/
+.contact-form {
+    max-width: 700px;
+    margin: auto;
+    width: 100%;
+    display: grid;
+    row-gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    border: none;
+    outline: none;
+    padding: 15px;
+    font-size: .9rem;
+    color: white;
+    background: var(--box-color);
+
+}
+
+.contact-form ::placeholder {
+    color: whitesmoke;
+}
+
+.contact-form .send-btn {
+    width: 120px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    padding: 12px;
+    color: whitesmoke;
+    border-radius: .5rem;
+    background: var(--container-color);
+    cursor: pointer;
+}
+
+.contact-form .send-btn:hover,
+.contact-form input:focus,
+.contact-form textarea:focus {
+    background: rgb(79, 81, 116);
+    transition: all .3s linear;
+}
+
+/* ContactForm style Ends*/
+
+
+
+/* Footer style starts*/
+.footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 1.4rem;
+    padding: 30px;
+}
+
+.footer p {
+    font-size: .9rem;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.footer-links a {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--bg-color);
+}
+
+.footer-links a:hover {
+    color: var(--main-color);
+    transition: all .5s linear;
+}
+
+/* Footer style ends*/
+
+
+
+/* *Media Responsive */
+@media(max-width:990px) {
+    .container {
+        width: 85%;
+        margin: 0 auto;
+    }
+}
+
+@media(max-width:892px) {
+    .section {
+        padding: 2rem 0;
+    }
+
+    .nav {
+        padding: 12px 0;
+    }
+
+    .heading {
+        font-size: 4rem;
+    }
+
+    .portfolio-box {
+        height: 250px;
+    }
+}
+
+@media(max-width:775px) {
+    .nav {
+        padding: 10px 0;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .home {
+        min-height: 500px;
+        padding-top: 6rem;
+    }
+
+    .home-text h3 {
+        font-size: 1rem;
+    }
+
+    .home-text h2 {
+        font-size: 3rem;
+        line-height: 3.8rem;
+    }
+
+    .home-text p {
+        font-size: .9rem;
+    }
+
+    .services-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portfolio-box {
+        height: 245px;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .navbar {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background: var(--box-color);
+        padding: 50px 20px;
+        transition: .5s all linear;
+    }
+
+    .open-menu {
+        right: 0;
+        transition: .5s all linear;
+    }
+
+    .nav-link {
+        display: block;
+        margin: 1rem 0;
+    }
+}
+
+@media(max-width:635px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-data span {
+        font-size: .9rem;
+    }
+
+    .about-data h2 {
+        font-size: 1.7rem;
+        line-height: 2.3rem;
+        font-weight: 600;
+        margin: .8rem 0;
+    }
+
+    .about-text p {
+        font-size: .8rem;
+        margin-bottom: 1.3rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .projects-content {
+        grid-template-columns: repeat(2, 200px);
+    }
+}
+
+@media(max-width:450px) {
+    .home {
+        min-height: 485px;
+        padding-top: 5rem;
+    }
+
+    .home-img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .home-img img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .home-text h2 {
+        font-size: 2.1rem;
+        line-height: 3.2rem;
+    }
+
+    .home-text p br {
+        display: contents;
+    }
+
+    .heading {
+        font-size: 3rem;
+    }
+
+    .about-data h2 {
+        font-size: 1.5rem;
+        line-height: 2.1rem;
+        margin: .6rem 0;
+    }
+
+    .services-content,
+    .portfolio-content,
+    .projects-content {
+        grid-template-columns: 1fr;
+    }
+
+    .review-box,
+    .review-text {
+        font-size: .8rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+}
